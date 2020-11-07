@@ -1,10 +1,10 @@
-import gitead from 'next/head'
+import Head from 'next/head'
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create First Next App</title>
+        <title>Create Firs Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
