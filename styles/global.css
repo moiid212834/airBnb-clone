@@ -5,6 +5,26 @@
     background-color: #FF385C;
 }
 
+.bg-black{
+      background: #000 !important;
+}
+
+.bg-dark-grey{
+      background: #222;
+}
+
+.footer-menu li a{ 
+      line-height: 1.5;
+      color:#777;
+}
+
+.footer-menu li a:hover{ 
+      line-height: 1.5;
+      color:#000;
+      transition: all 1s;
+      text-decoration: none;
+}
+
 .logo {
       line-height: 60px;
       margin: 16px 46px;

@@ -37,16 +37,16 @@ export default class Header extends React.Component {
     }
     render(){
     return (
-      <div>
-          <header>
-            <nav>
+    
+          <header >
+            <nav style={{zIndex:"99999"}}>
                
                <div className="menu-icon" onClick={this.menuopen}>
                     <FontAwesomeIcon icon={faBars} style={{display:"block", float:"right"}}></FontAwesomeIcon>
                </div>
                
                
-               <div className="menu d-flex flex-row justify-content-between flex-wrap">
+               <div className="menu d-flex flex-row justify-content-between flex-wrap" style={{zIndex:"999"}}>
                <div className="logo">
                   LOGO
                </div>
@@ -59,7 +59,7 @@ export default class Header extends React.Component {
                </div>
             </nav>
          </header>
-      </div>
+    
     )
     }
 }
