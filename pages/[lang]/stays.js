@@ -26,7 +26,7 @@ const stays = ()=> {
                     </div>
                   </div>
                   <div className="my-2 pt-3 border-top">
-                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4">
+                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4 flex-md-nowrap flex-wrap">
                         <img src="https://pix10.agoda.net/hotelImages/1269933/-1/e426483a11b42f1773217818c8854c08.jpg" style={{width:"380px"}} className="rounded mr-2" alt=""/>
                         <div className="w-100 mb4">
                             <div className="d-flex flex-row justify-content-between w-100">
@@ -47,7 +47,7 @@ const stays = ()=> {
                             </div>
                         </div>
                     </div>
-                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4">
+                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4 flex-md-nowrap flex-wrap">
                         <img src="https://pix10.agoda.net/hotelImages/1269933/-1/e426483a11b42f1773217818c8854c08.jpg" style={{width:"380px"}} className="rounded mr-2" alt=""/>
                         <div className="w-100 mb4">
                             <div className="d-flex flex-row justify-content-between w-100">
@@ -68,7 +68,7 @@ const stays = ()=> {
                             </div>
                         </div>
                     </div>
-                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4">
+                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4 flex-md-nowrap flex-wrap">
                         <img src="https://pix10.agoda.net/hotelImages/1269933/-1/e426483a11b42f1773217818c8854c08.jpg" style={{width:"380px"}} className="rounded mr-2" alt=""/>
                         <div className="w-100 mb4">
                             <div className="d-flex flex-row justify-content-between w-100">
@@ -89,7 +89,7 @@ const stays = ()=> {
                             </div>
                         </div>
                     </div>
-                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4">
+                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4 flex-md-nowrap flex-wrap">
                         <img src="https://pix10.agoda.net/hotelImages/1269933/-1/e426483a11b42f1773217818c8854c08.jpg" style={{width:"380px"}} className="rounded mr-2" alt=""/>
                         <div className="w-100 mb4">
                             <div className="d-flex flex-row justify-content-between w-100">
@@ -110,7 +110,7 @@ const stays = ()=> {
                             </div>
                         </div>
                     </div>
-                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4">
+                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4 flex-md-nowrap flex-wrap">
                         <img src="https://pix10.agoda.net/hotelImages/1269933/-1/e426483a11b42f1773217818c8854c08.jpg" style={{width:"380px"}} className="rounded mr-2" alt=""/>
                         <div className="w-100 mb4">
                             <div className="d-flex flex-row justify-content-between w-100">
@@ -131,7 +131,7 @@ const stays = ()=> {
                             </div>
                         </div>
                     </div>
-                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4">
+                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4 flex-md-nowrap flex-wrap">
                         <img src="https://pix10.agoda.net/hotelImages/1269933/-1/e426483a11b42f1773217818c8854c08.jpg" style={{width:"380px"}} className="rounded mr-2" alt=""/>
                         <div className="w-100 mb4">
                             <div className="d-flex flex-row justify-content-between w-100">
@@ -152,7 +152,7 @@ const stays = ()=> {
                             </div>
                         </div>
                     </div>
-                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4">
+                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4 flex-md-nowrap flex-wrap">
                         <img src="https://pix10.agoda.net/hotelImages/1269933/-1/e426483a11b42f1773217818c8854c08.jpg" style={{width:"380px"}} className="rounded mr-2" alt=""/>
                         <div className="w-100 mb4">
                             <div className="d-flex flex-row justify-content-between w-100">
@@ -173,7 +173,7 @@ const stays = ()=> {
                             </div>
                         </div>
                     </div>
-                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4">
+                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4 flex-md-nowrap flex-wrap">
                         <img src="https://pix10.agoda.net/hotelImages/1269933/-1/e426483a11b42f1773217818c8854c08.jpg" style={{width:"380px"}} className="rounded mr-2" alt=""/>
                         <div className="w-100 mb4">
                             <div className="d-flex flex-row justify-content-between w-100">
@@ -194,7 +194,7 @@ const stays = ()=> {
                             </div>
                         </div>
                     </div>
-                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4">
+                    <div className=" d-flex flex-row align-items-start justify-content-start mb-4 flex-md-nowrap flex-wrap">
                         <img src="https://pix10.agoda.net/hotelImages/1269933/-1/e426483a11b42f1773217818c8854c08.jpg" style={{width:"380px"}} className="rounded mr-2" alt=""/>
                         <div className="w-100 mb4">
                             <div className="d-flex flex-row justify-content-between w-100">
@@ -215,6 +215,7 @@ const stays = ()=> {
                             </div>
                         </div>
                     </div>
+                    
                     
                   </div>
                   <div className="text-center mb-4">
