@@ -4,7 +4,13 @@
 .bg-theme{
     background-color: #FF385C;
 }
-
+.btn-theme{
+      background-color: #FF385C !important;
+      color:white !important;  
+}
+.btn-theme:hover{
+      background-color: #FF3451 !important;  
+}
 .bg-black{
       background: #000 !important;
 }
@@ -26,7 +32,7 @@
 }
 
 .logo {
-      line-height: 60px;
+      line-height: 30px;
       margin: 16px 46px;
       color: #fff;
       font-weight: bold;
@@ -35,7 +41,7 @@
 }
 
 .menu2{
-    line-height: 60px;
+      line-height: 60px;
       list-style: none;
       background: rgba(0, 0, 0, 0);
       overflow: hidden;
@@ -48,27 +54,25 @@
 }
 
 .menu2 li{
-    display: inline-block;
+      display: inline-block;
       padding: 16px 20px;
       color: #fff;      
 }
 
 .menu2 li a{
-
       color: #fff;
       z-index: 99999999;
-
 }
 
 nav {
       position: fixed;
       width: 100%;
-      line-height: 60px;
+      line-height: 30px;
       background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(9,9,121,0) 40%);
 }
 
 nav ul {
-      line-height: 60px;
+      line-height: 30px;
       list-style: none;
       background: rgba(0, 0, 0, 0);
       overflow: hidden;
@@ -83,7 +87,6 @@ nav ul {
 
 nav.black {
       background: #000;
-      transition: 1s;
 }
 
 nav ul li {
@@ -105,10 +108,10 @@ nav ul li a:hover {
 }
 
 .menu-icon {
-      line-height: 60px;
-    position: fixed;
-    top: 20px;
-    right:20px;
+      line-height: 30px;
+      position: fixed;
+      top: 20px;
+      right:20px;
       text-align: right;
       box-sizing: border-box;
       padding: 15px 24px;
@@ -118,7 +121,7 @@ nav ul li a:hover {
 }
 
 .navpadding{
-    height:60px;
+    height:63px;
 }
 
 @media(max-width: 786px) {
@@ -144,18 +147,14 @@ nav ul li a:hover {
       }
       nav.black {
         background: #000;
-        transition: all 1s ease-in;
-        height:90px;
+        height:60px;
         opacity:0.7
   }
 
       .showing {
             max-height: 34em;
-            
-            
             z-index: -1;
-            padding-top: 40px;
-        
+            padding-top: 40px; 
       }
 
       nav ul li {

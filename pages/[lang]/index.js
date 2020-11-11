@@ -1,7 +1,41 @@
 import {useRouter} from 'next/router'
 import Layout from '../../components/layout'
+import { DatePicker, Menu, Dropdown, Button,InputNumber } from 'antd';
+import PlaceSelect from '../../components/place-select'
 
-export default ()=> {
+const { RangePicker } = DatePicker;
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <div className="d-flex justify-content-between align-items-center py-2">
+      <div>
+        <div className="mr-2">Number of Adults</div>
+        <small>Age 18 or above</small>
+      </div>
+      <InputNumber min={1} max={100000} defaultValue={3} />
+      </div>
+    </Menu.Item>
+    <Menu.Item>
+      <div className="d-flex justify-content-between align-items-center py-2">
+      <div>
+        <div className="mr-2">Number of Children</div>
+        <small>Age 10-18</small>
+      </div>
+      <InputNumber min={1} max={100000} defaultValue={3} />
+      </div>
+    </Menu.Item>
+    <Menu.Item>
+      <div className="d-flex justify-content-between align-items-center py-2">
+      <div>
+        <div className="mr-2">Number of Infants</div>
+        <small>Age 2-8</small>
+      </div>
+      <InputNumber min={1} max={100000} defaultValue={3} />
+      </div>
+    </Menu.Item>
+  </Menu>
+);
+const home = ()=> {
   const router = useRouter();
   return (
     <Layout>
@@ -17,10 +51,17 @@ export default ()=> {
       </div>
       <div className="container">
         <div className="bg-white rounded shadow text-center d-flex flex-row justify-content-between">
-          <div className="btn btn-light btn-block p-3 m-0">Hello</div>
-          <div className="btn btn-light btn-block p-3 m-0 border-left">Hello</div>
-          <div className="btn btn-light btn-block p-3 m-0 border-left">Hello</div>
-          <div className="btn btn-light btn-block p-3 m-0 border-left">Hello</div>
+          <div className="btn btn-light bg-white btn-block p-3 m-0">
+            <PlaceSelect></PlaceSelect>
+          </div>
+          
+          <RangePicker size={"large"} style={{width:"185%"}}></RangePicker>
+          
+          <div className="bg-white rounded btn-block p-0 m-0 border-left">
+          <Dropdown overlay={menu} placement="bottomRight">
+            <Button className="border-0 btn btn-block h-100 text-muted">Guests</Button>
+          </Dropdown>
+          </div>
         </div>
       </div>
       <div className="p-5 ">
@@ -193,7 +234,7 @@ export default ()=> {
           </div>    
         </div>
       </div>
-      <div className="container"> 
+      <div id="hosts" className="container"> 
       <div id="live-anywhere" className="my-4">
           <h1>Join millions of hosts on Airbnb</h1>
           <div className="row">
@@ -221,3 +262,4 @@ export default ()=> {
     </Layout>
   )
 }
+export default home;

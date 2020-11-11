@@ -2,14 +2,63 @@ import Head from 'next/head'
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import { faHamburger, faBars, faGlobe, faArrowDown, faAngleDown, faUserCircle } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
+import { DatePicker, Menu, Dropdown, Button,InputNumber } from 'antd';
+const { RangePicker } = DatePicker;
+const menulang = (
+    <Menu>
+      <Menu.Item>
+        <a target="_blank" rel="noopener noreferrer" >
+          English
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a target="_blank" rel="noopener noreferrer">
+          Spanish
+        </a>
+      </Menu.Item> 
+    </Menu>
+  );
+
+  const menuuser = (
+    <Menu>
+      <Menu.Item>
+        <a target="_blank" rel="noopener noreferrer" >
+          Sign Up
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a target="_blank" rel="noopener noreferrer" >
+          Login
+        </a>
+      </Menu.Item>
+      <hr/>
+      <Menu.Item>
+        <a target="_blank" rel="noopener noreferrer" >
+          Host a Home
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a target="_blank" rel="noopener noreferrer" >
+          Host an experience
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a target="_blank" rel="noopener noreferrer" >
+          Help
+        </a>
+      </Menu.Item>
+    </Menu>
+  );
 export default class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             menutoggle: false,
         };
+        this.props=props;
     }
- 
+    
+    
 
     componentDidMount(){
     window.addEventListener("scroll", this.handleScroll);
@@ -21,7 +70,7 @@ export default class Header extends React.Component {
     };
 
     handleScroll = () => {
-        if (window.scrollY > 20) {
+        if (window.scrollY > 1) {
             document.querySelector("nav").className = "black";
         } else {
             document.querySelector("nav").className = "";
@@ -39,7 +88,7 @@ export default class Header extends React.Component {
     return (
     
           <header >
-            <nav style={{zIndex:"99999"}}>
+            <nav style={{zIndex:"99999"}} className={this.props.transparent}>
                
                <div className="menu-icon" onClick={this.menuopen}>
                     <FontAwesomeIcon icon={faBars} style={{display:"block", float:"right"}}></FontAwesomeIcon>
@@ -48,13 +97,22 @@ export default class Header extends React.Component {
                
                <div className="menu d-flex flex-row justify-content-between flex-wrap" style={{zIndex:"999"}}>
                <div className="logo">
-                  LOGO
+                  <a href="/en" className="text-light text-decoration-none">LOGO</a>
                </div>
                 <ul className ={this.state.menutoggle? "showing":""}>
                     
-                    <li><a href="#">Become a Host</a></li>
-                    <li><a href="#"><FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon><FontAwesomeIcon className="ml-1" icon={faAngleDown}></FontAwesomeIcon></a></li>
-                    <li><a href="#"><span className="p-3 bg-white shadow " style={{borderRadius:"25px"}}><FontAwesomeIcon className="mr-1 text-black-50" icon={faBars} size="lg"></FontAwesomeIcon><FontAwesomeIcon className="text-black-50 ml-1" icon={faUserCircle}  size="lg"></FontAwesomeIcon></span></a></li>
+                    <li><a href="/en/host">Become a Host</a></li>
+                    <li><a href="#">
+                        
+                        <Dropdown overlay={menulang} placement="bottomRight" arrow>
+                            <Button><FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon><FontAwesomeIcon className="ml-1" icon={faAngleDown}></FontAwesomeIcon></Button>
+                        </Dropdown>
+                    </a></li>
+                    <li><a href="#">
+                        <Dropdown overlay={menuuser} placement="bottomRight" arrow>
+                            <Button><FontAwesomeIcon className="mr-1 text-black-50" icon={faBars} size="lg"></FontAwesomeIcon><FontAwesomeIcon className="text-black-50 ml-1" icon={faUserCircle}  size="lg"></FontAwesomeIcon></Button>
+                        </Dropdown>
+                    </a></li>
                 </ul>
                </div>
             </nav>
