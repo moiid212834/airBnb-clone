@@ -222,7 +222,7 @@ const stays = ()=> {
                   <Pagination defaultCurrent={1} total={50} />
                   </div>
               </div>
-              <div className="col-md-5 position-relative pr-0 mr-0">
+              <div className="col-md-5 position-relative pr-0 mr-md-0">
                   <div className="sticky-top clearfix mb-4" style={{top:"60px",height:"100vh", overflow:"hidden"}}>
                   <div id="map"  >
                     <Maps></Maps>
