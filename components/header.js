@@ -3,6 +3,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import { faHamburger, faBars, faGlobe, faArrowDown, faAngleDown, faUserCircle } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
 import { DatePicker, Menu, Dropdown, Button,InputNumber } from 'antd';
+import LoginModal from './loginmodal'
+import RegisterModal from './registermodal'
 const { RangePicker } = DatePicker;
 const menulang = (
     <Menu>
@@ -22,14 +24,10 @@ const menulang = (
   const menuuser = (
     <Menu>
       <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" >
-          Sign Up
-        </a>
+          <RegisterModal></RegisterModal>
       </Menu.Item>
       <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" >
-          Login
-        </a>
+        <LoginModal></LoginModal>
       </Menu.Item>
       <hr/>
       <Menu.Item>

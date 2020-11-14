@@ -223,7 +223,7 @@ const stays = ()=> {
                   </div>
               </div>
               <div className="col-md-5 position-relative pr-0 mr-md-0">
-                  <div className="sticky-top clearfix mb-4" style={{top:"60px",height:"100vh", overflow:"hidden"}}>
+                  <div className="sticky-top clearfix mb-4" style={{top:"60px",height:"100vh", overflow:"hidden",zIndex:"0"}}>
                   <div id="map"  >
                     <Maps></Maps>
                   </div>

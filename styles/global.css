@@ -170,3 +170,9 @@ nav ul li a:hover {
       }
 
 }
+.react-tel-input input{
+      width: 100%!important;
+}
+.ant-modal-footer{
+      display:none!important;
+}
