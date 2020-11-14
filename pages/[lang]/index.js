@@ -1,7 +1,7 @@
 import {useRouter} from 'next/router'
 import Layout from '../../components/layout'
 import { DatePicker, Menu, Dropdown, Button,InputNumber } from 'antd';
-import PlaceSelect from '../../components/place-select'
+import PlaceSelect from '../../components/places'
 
 const { RangePicker } = DatePicker;
 const menu = (
