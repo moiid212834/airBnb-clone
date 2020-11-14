@@ -176,3 +176,20 @@ nav ul li a:hover {
 .ant-modal-footer{
       display:none!important;
 }
+.pac-container.pac-logo {
+      width: 300px!important;
+      top: 225px !important;
+  }
+  .pac-item {
+      padding: 20px;
+  }
+  input.pac-target-input {
+      border-color: white;
+      border: none;
+      width: 100% !important;
+  }
+  input.pac-target-input:focus {
+      border-color: white;
+      border: none!important;
+      outline: none!important;
+  }
