@@ -218,6 +218,7 @@ nav ul li a:hover {
       object-fit: cover;
       object-position: center top;
 }
-.indexnav{
-      border-radius:3.25rem!important;
-}
+.indexnav {
+      border-radius: 2.25rem!important;
+      overflow: hidden;
+  }

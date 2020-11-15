@@ -181,12 +181,12 @@ const home = ()=> {
         <div className="container">
         <div className="d-flex flex-row justify-content-between w-100 my-4">
           <div className="text-light"> 
-            <h2 >
+            <h2 className="text-light" >
               Meet online Expeirences
               <br/>
               
             </h2>
-            <h6>Interactive activities you can do together, led by expert hosts.</h6>
+            <h6 className="text-light">Interactive activities you can do together, led by expert hosts.</h6>
           </div>
           <div>
             <a href="" className="btn btn-outline-light">
