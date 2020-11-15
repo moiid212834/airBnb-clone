@@ -50,7 +50,7 @@ const home = ()=> {
         </ul>
       </div>
       <div className="container">
-        <div className="bg-white rounded shadow text-center d-flex flex-row justify-content-between">
+        <div className="bg-white shadow text-center d-flex flex-row justify-content-between">
           <div className="btn btn-light bg-white btn-block p-3 m-0">
             <PlaceSelect></PlaceSelect>
           </div>
