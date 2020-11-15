@@ -193,3 +193,28 @@ nav ul li a:hover {
       border: none!important;
       outline: none!important;
   }
+  .book-img-container img{
+      object-fit: cover;
+      object-position: center center;
+      max-height: 450px  ;
+  }
+  .book-img-container .col-6 img{
+      object-fit: cover;
+      object-position: center center;
+      max-height: 217px ;
+  }
+
+  .book-img-container .col-6,.book-img-container .col-md-6{
+        padding-right: 10px;
+        padding-left: 10px;
+  }
+  .otherplaces img{
+        height:300px;
+        object-fit: cover;
+        object-position: center top;
+  }
+  .otherexp img{
+      height:600px;
+      object-fit: cover;
+      object-position: center top;
+}
