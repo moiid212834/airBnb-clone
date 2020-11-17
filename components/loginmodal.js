@@ -14,7 +14,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
       visible={visible}
       title="Login"
       
-      style={{zIndex:"999999999999",maxWidth:"450px"}}
+      style={{zIndex:"999999999999",maxWidth:"370px"}}
       onCancel={onCancel}
       onOk={() => {
         form

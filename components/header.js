@@ -102,12 +102,12 @@ export default class Header extends React.Component {
                     <li><a href="/en/host">Become a Host</a></li>
                     <li><a href="#">
                         
-                        <Dropdown overlay={menulang} placement="bottomRight" arrow>
+                        <Dropdown overlay={menulang} placement="bottomCenter" arrow>
                             <Button><FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon><FontAwesomeIcon className="ml-1" icon={faAngleDown}></FontAwesomeIcon></Button>
                         </Dropdown>
                     </a></li>
                     <li><a href="#">
-                        <Dropdown overlay={menuuser} placement="bottomRight" arrow>
+                        <Dropdown overlay={menuuser} placement="bottomCenter" arrow>
                             <Button><FontAwesomeIcon className="mr-1 text-black-50" icon={faBars} size="lg"></FontAwesomeIcon><FontAwesomeIcon className="text-black-50 ml-1" icon={faUserCircle}  size="lg"></FontAwesomeIcon></Button>
                         </Dropdown>
                     </a></li>

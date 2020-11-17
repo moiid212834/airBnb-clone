@@ -20,9 +20,11 @@
     "next": "^10.0.0",
     "react": "16.13.1",
     "react-bootstrap": "^1.4.0",
+    "react-credit-card-input": "^1.1.5",
     "react-dom": "16.13.1",
     "react-google-places-autocomplete": "^3.0.0",
     "react-multi-carousel": "^2.5.5",
-    "react-phone-input-2": "^2.13.9"
+    "react-phone-input-2": "^2.13.9",
+    "styled-components": "^5.2.1"
   }
 }

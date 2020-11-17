@@ -110,7 +110,7 @@ nav ul li a:hover {
 .menu-icon {
       line-height: 30px;
       position: fixed;
-      top: 20px;
+      top: 10px;
       right:20px;
       text-align: right;
       box-sizing: border-box;
@@ -221,4 +221,8 @@ nav ul li a:hover {
 .indexnav {
       border-radius: 2.25rem!important;
       overflow: hidden;
+  }
+  .ant-dropdown-show-arrow.ant-dropdown-placement-bottomCenter {
+      z-index: 9999999999;
+      position: fixed;
   }

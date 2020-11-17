@@ -1,60 +1,11 @@
 import {useRouter} from 'next/router'
 import Layout from '../../components/layout'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
-import { faStar, faHeart, faBed, faWifi , faShieldAlt} from "@fortawesome/free-solid-svg-icons"; // import the icons you need
+import { faAngleLeft, faStar, faClock, faLock} from "@fortawesome/free-solid-svg-icons"; // import the icons you need
 import { DatePicker, Menu, Dropdown, Button, InputNumber, Progress } from 'antd';
-import Map from '../../components/maps'
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3 // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2 // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1 // optional, default to 1.
-    }
-  };
-const {RangePicker}=DatePicker;
-const menu = (
-    <Menu>
-      <Menu.Item>
-        <div className="d-flex justify-content-between align-items-center py-2">
-        <div>
-          <div className="mr-2">Number of Adults</div>
-          <small>Age 18 or above</small>
-        </div>
-        <InputNumber min={1} max={100000} defaultValue={3} />
-        </div>
-      </Menu.Item>
-      <Menu.Item>
-        <div className="d-flex justify-content-between align-items-center py-2">
-        <div>
-          <div className="mr-2">Number of Children</div>
-          <small>Age 10-18</small>
-        </div>
-        <InputNumber min={1} max={100000} defaultValue={3} />
-        </div>
-      </Menu.Item>
-      <Menu.Item>
-        <div className="d-flex justify-content-between align-items-center py-2">
-        <div>
-          <div className="mr-2">Number of Infants</div>
-          <small>Age 2-8</small>
-        </div>
-        <InputNumber min={1} max={100000} defaultValue={3} />
-        </div>
-      </Menu.Item>
-    </Menu>
-  );
+import Map from '../../components/maps';
+import { Switch } from 'antd';
+import CreditCardInput from 'react-credit-card-input';
 
 const booking = ()=> {
   const router = useRouter();
@@ -63,467 +14,125 @@ const booking = ()=> {
   return (
     <Layout>
         <div className="navpadding bg-black"></div>
-        <div className="container mt-4">
-            <h1>
-            Bright large window room in Trinity Bell Wood
-            </h1>
-            <div>
-                <span><FontAwesomeIcon icon={faStar} className="text-theme"></FontAwesomeIcon>&nbsp;</span>&nbsp;4.77 <span className="text-muted">(40)</span>&nbsp;&bull;&nbsp;<a href="#">Toronto, Ontario, Canada</a>
+        <div className="container">
+            <div className="w-100 text-left">
+                <FontAwesomeIcon icon={faAngleLeft} size="2x"></FontAwesomeIcon>
+                <div><h2 className="my-2">Request to Book</h2></div>
             </div>
-            <div className="book-img-container">
-                <div className="row my-4 mx-0 px-0">
-                    <div className="col-md-6 mb-3 mb-md-0"><img className="w-100" style={{borderRadius: " 10px 0 0 10px"}} src="https://a0.muscache.com/im/pictures/e5a16269-3b67-48a7-8972-bb3ea5b12aa1.jpg?im_w=960" alt=""/></div>
-                    <div className="col-md-6">
-                        <div className="row mb-3">
-                            <div className="col-6"><img className="w-100"  src="https://a0.muscache.com/im/pictures/e5a16269-3b67-48a7-8972-bb3ea5b12aa1.jpg?im_w=960" alt=""/></div>
-                            <div className="col-6"><img className="w-100" style={{borderRadius: "0 10px 0 0"}}  src="https://a0.muscache.com/im/pictures/e5a16269-3b67-48a7-8972-bb3ea5b12aa1.jpg?im_w=960" alt=""/></div>
-                        </div>
-                        <div className="row">
-                            <div className="col-6"><img className="w-100" src="https://a0.muscache.com/im/pictures/e5a16269-3b67-48a7-8972-bb3ea5b12aa1.jpg?im_w=960" alt=""/></div>
-                            <div className="col-6"><img className="w-100" style={{borderRadius: "0 0 10px 0"}}  src="https://a0.muscache.com/im/pictures/e5a16269-3b67-48a7-8972-bb3ea5b12aa1.jpg?im_w=960" alt=""/></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="mt-4">
-                <div className="row">
-                    <div className="col-md-8">
-                        <div className="my-3">
-                            <div className="d-flex justify-content-between">
-                                <div>
-                                    <h2>
-                                        Private room in house hosted by Sue
-                                    </h2>
-                                    <div>
-                                        2 guests · 1 bedroom · 1 bed · 1 bathroom
-                                    </div>
-                                </div>
-                                <div>
-                                    <img src="https://a0.muscache.com/im/pictures/user/33dbea6b-28e4-4983-a41e-f24e5d98d75b.jpg" className="rounded-cirlcle" style={{width:"50px",height:"50px",borderRadius:"50%"}} alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <hr className="mb-4"/>
-                        <div className="d-flex justify-content-start mb-4">
-                            <div className="m-1 mr-3">
-                                <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
-                            </div>
-                            <div>
-                                <b>Enhanced Clean</b>
-                                <br/>
-                                This host committed to Airbnb's 5-step enhanced cleaning process. <a href="#">Learn More</a>
-                            </div>
-                            <hr/>
-                        </div>
-                        <div className="d-flex justify-content-start mb-4">
-                            <div className="m-1 mr-3">
-                                <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
-                            </div>
-                            <div>
-                                <b>Enhanced Clean</b>
-                                <br/>
-                                This host committed to Airbnb's 5-step enhanced cleaning process. <a href="#">Learn More</a>
-                            </div>
-                            <hr/>
-                        </div>
-                        <div className="d-flex justify-content-start mb-4">
-                            <div className="m-1 mr-3">
-                                <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
-                            </div>
-                            <div>
-                                <b>Enhanced Clean</b>
-                                <br/>
-                                This host committed to Airbnb's 5-step enhanced cleaning process. <a href="#">Learn More</a>
-                            </div>
-                            <hr/>
-                        </div>
-                        <div className="d-flex justify-content-start mb-4">
-                            <div className="m-1 mr-3">
-                                <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
-                            </div>
-                            <div>
-                                <b>Enhanced Clean</b>
-                                <br/>
-                                This host committed to Airbnb's 5-step enhanced cleaning process. <a href="#">Learn More</a>
-                            </div>
-                            <hr/>
-                        </div>
-                        <div className="d-flex justify-content-start mb-4">
-                            <div className="m-1 mr-3">
-                                <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
-                            </div>
-                            <div>
-                                <b>Enhanced Clean</b>
-                                <br/>
-                                This host committed to Airbnb's 5-step enhanced cleaning process. <a href="#">Learn More</a>
-                            </div>
-                            <hr/>
-                        </div>
-                        <hr/>
-                        <div className="my-4">
-                            <p className="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam fugit, veritatis labore dolore fugiat, error harum minima numquam, nulla quod pariatur. Cumque atque, porro quae consequatur maiores tempore recusandae delectus.</p>
-                            
-                            <a href="#">Contact Host</a>
-                            <br/>
-                        </div>
-                        <hr/>
-                        <div className="my-4">
-                            <h2 className="mb-4">
-                                Sleeping Arrangments
-                            </h2>
-                            <div className="d-flex justify-content-between">
-                                <div className="rounded p-5 border">
-                                    <FontAwesomeIcon icon={faBed} size="3x"></FontAwesomeIcon>
-                                    <h4>Bedroom 1</h4>
-                                    <div>Queen Bed</div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className="my-4">
-                            <h2 className="mb-4">
-                                Amenities
-                            </h2>
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <p className="lead"><FontAwesomeIcon icon={faWifi} className="mr-2"></FontAwesomeIcon>Wifi</p>
-                                    <p className="lead"><FontAwesomeIcon icon={faWifi} className="mr-2"></FontAwesomeIcon>Wifi</p>
-                                    <p className="lead"><FontAwesomeIcon icon={faWifi} className="mr-2"></FontAwesomeIcon>Wifi</p>
-                                    <p className="lead"><FontAwesomeIcon icon={faWifi} className="mr-2"></FontAwesomeIcon>Wifi</p>
-                                    <p className="lead"><FontAwesomeIcon icon={faWifi} className="mr-2"></FontAwesomeIcon>Wifi</p>
-                                    
-                                </div>
-                                <div className="col-md-6">
-                                    <p className="lead"><FontAwesomeIcon icon={faWifi} className="mr-2"></FontAwesomeIcon>Wifi</p>
-                                    <p className="lead"><FontAwesomeIcon icon={faWifi} className="mr-2"></FontAwesomeIcon>Wifi</p>
-                                    <p className="lead"><FontAwesomeIcon icon={faWifi} className="mr-2"></FontAwesomeIcon>Wifi</p>
-                                    <p className="lead"><FontAwesomeIcon icon={faWifi} className="mr-2"></FontAwesomeIcon>Wifi</p>
-                                    <p className="lead"><FontAwesomeIcon icon={faWifi} className="mr-2"></FontAwesomeIcon>Wifi</p>
-                                </div>
-                            </div>
-                            <a href="#" className="btn btn-outline-dark mt-4" >See all Amenities</a>
-                        </div>
-                        <hr/>
-                        <div className="my-4" style={{height:"350px"}}>
-                            <h4>Select your Checkout Dates</h4>
-                            <div className="text-muted mb-4">Select checkout dates for exact pricing</div>
-                        <RangePicker size={"large"} style={{width:"100%"}}></RangePicker>
-                        </div>
-                    </div>
-                    <div className="col-md-4 mb-4">
-                        <div className="sticky-top rounded shadow p-3 border" style={{top:"6em"}}>
-                            <div className="d-flex justify-content-between align-items-center">
-                                <div>
-                                     <h2>₹1,604/ <small>night</small></h2>
-                                </div>
-                                <div>
-                                    <span><FontAwesomeIcon icon={faStar} className="text-theme"></FontAwesomeIcon>&nbsp;</span>&nbsp;4.77 <span className="text-muted">(40)</span>
-                                </div>
-                            </div>
-                            <div className="border rounded mb-4 border-dark">
-                                <div className="border-bottom border-dark">
-                                    <div className="d-flex justify-content-arround ">
-                                        <div className="p-3 w-50">
-                                            <small><b>Checkin</b></small><br/>
-                                            12/1/2020
-                                        </div>
-                                        <div className="border-left border-dark p-3 w-50">
-                                            <small><b>Checkout</b></small><br/>
-                                            13/1/2020
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="p-3 text-center">
-                                <Dropdown overlay={menu} placement="bottomRight">
-                                    <Button className="border-0 btn btn-block h-100 text-muted">9 Guests</Button>
-                                </Dropdown>
-                                </div>
-                                
-                            </div>
-                            <a href="#" className="btn btn-block btn-theme btn-lg">Check Availability</a>
-                        </div>
+            <div className="row flex-wrap-reverse">   
+                <div className="col-md-6">
+                    <div className="my-3">
                         
-                    </div>
-                </div>
-            </div>
-            <hr/>
-            <div className="my-4">
-                <h2><span><FontAwesomeIcon icon={faStar} className="text-theme"></FontAwesomeIcon>&nbsp;</span>&nbsp;4.77 <span className="text-muted">(40 Reviews)</span></h2>
-                <div className="row mt-4">   
-                    <div className="col-md-6">
-                        <div className="d-flex justify-content-between align-items-baseline">
-                            <div><p className="lead">Cleanliness</p></div>
-                            <Progress percent={81} size="small" className="w-50"></Progress>
-                        </div>
-                        <div className="d-flex justify-content-between align-items-baseline">
-                            <div><p className="lead">Cleanliness</p></div>
-                            <Progress percent={81} size="small" className="w-50"></Progress>
-                        </div>
-                        <div className="d-flex justify-content-between align-items-baseline">
-                            <div><p className="lead">Cleanliness</p></div>
-                            <Progress percent={81} size="small" className="w-50"></Progress>
-                        </div>
+                        <h5>Good Price</h5>
+                        <p className="text-muted font-weight-bold">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur vitae autem reiciendis excepturi dolorum dolores illum architecto, rem accusamus amet neque eveniet, consectetur tenetur consequatur pariatur, impedit et nisi veritatis.</p>
+                        <hr className="my-5"/>
                         <div className="mt-4">
-                            <div className="d-flex justify-content-start mb-4">
-                                <img src="https://a0.muscache.com/im/pictures/user/f95b6593-fa10-4516-9077-1f5e5127a1a4.jpg" className="mr-2" style={{height:"60px",width:"60px",borderRadius:"50%",objectFit:"cover"}} alt=""/>
+                            <div className="d-flex justify-content-between mb-2">
                                 <div>
-                                    <h4>Wai Suet Gi Gi</h4>
-                                    <div>October 2020</div>
-                                    <br/>
-                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore facilis atque ex eaque maiores hic velit repellat vero nam, molestias accusamus optio iure quaerat tempora quos ut quibusdam nisi sunt!
+                                    <h5>Your Dates</h5>
+                                    <p className="text-muted font-weight-bold">Nov 3,2020 - Nov 8,2020</p>
                                     </div>
-                                </div>
+                                <div>  <a href="#">Edit</a></div>
                             </div>
-                            <div className="d-flex justify-content-start mb-4">
-                                <img src="https://a0.muscache.com/im/pictures/user/f95b6593-fa10-4516-9077-1f5e5127a1a4.jpg" className="mr-2" style={{height:"60px",width:"60px",borderRadius:"50%",objectFit:"cover"}} alt=""/>
+                            <div className="d-flex justify-content-between mb-2">
                                 <div>
-                                    <h4>Wai Suet Gi Gi</h4>
-                                    <div>October 2020</div>
-                                    <br/>
-                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore facilis atque ex eaque maiores hic velit repellat vero nam, molestias accusamus optio iure quaerat tempora quos ut quibusdam nisi sunt!
+                                    <h5>Your Guests</h5>
+                                    <p className="text-muted font-weight-bold">2 Guests</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="d-flex justify-content-start mb-4">
-                                <img src="https://a0.muscache.com/im/pictures/user/f95b6593-fa10-4516-9077-1f5e5127a1a4.jpg" className="mr-2" style={{height:"60px",width:"60px",borderRadius:"50%",objectFit:"cover"}} alt=""/>
-                                <div>
-                                    <h4>Wai Suet Gi Gi</h4>
-                                    <div>October 2020</div>
-                                    <br/>
-                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore facilis atque ex eaque maiores hic velit repellat vero nam, molestias accusamus optio iure quaerat tempora quos ut quibusdam nisi sunt!
-                                    </div>
-                                </div>
+                                <div>  <a href="#">Edit</a></div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6">
-                        <div className="d-flex justify-content-between align-items-baseline">
-                            <div><p className="lead">Cleanliness</p></div>
-                            <Progress percent={81} size="small" className="w-50"></Progress>
+                    <hr className="my-5"/>
+                    <div className="my-4">
+                        <div className="d-flex justify-content-between mb-2">
+                            <div><b>Is this a work trip?</b></div>
+                            <div><Switch></Switch></div>
                         </div>
-                        <div className="d-flex justify-content-between align-items-baseline">
-                            <div><p className="lead">Cleanliness</p></div>
-                            <Progress percent={81} size="small" className="w-50"></Progress>
+                        <div className="d-flex flex-row justify-content-between mb-2">
+                            <div style={{width:"50%"}}><b>Pay with</b></div>
+                            <div className="text-right"><img src="https://logodix.com/logo/780370.png" alt="" style={{width:"50%"}}/></div>
                         </div>
-                        <div className="d-flex justify-content-between align-items-baseline">
-                            <div><p className="lead">Cleanliness</p></div>
-                            <Progress percent={81} size="small" className="w-50"></Progress>
+                        <div className="mt-4 pt-3 mb-1">
+                        <CreditCardInput
+                            fieldClassName="input w-100 border rounded"
+                            />
                         </div>
-                        <div className="mt-4">
-                            <div className="d-flex justify-content-start mb-4">
-                                <img src="https://a0.muscache.com/im/pictures/user/f95b6593-fa10-4516-9077-1f5e5127a1a4.jpg" className="mr-2" style={{height:"60px",width:"60px",borderRadius:"50%",objectFit:"cover"}} alt=""/>
-                                <div>
-                                    <h4>Wai Suet Gi Gi</h4>
-                                    <div>October 2020</div>
-                                    <br/>
-                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore facilis atque ex eaque maiores hic velit repellat vero nam, molestias accusamus optio iure quaerat tempora quos ut quibusdam nisi sunt!
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="d-flex justify-content-start mb-4">
-                                <img src="https://a0.muscache.com/im/pictures/user/f95b6593-fa10-4516-9077-1f5e5127a1a4.jpg" className="mr-2" style={{height:"60px",width:"60px",borderRadius:"50%",objectFit:"cover"}} alt=""/>
-                                <div>
-                                    <h4>Wai Suet Gi Gi</h4>
-                                    <div>October 2020</div>
-                                    <br/>
-                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore facilis atque ex eaque maiores hic velit repellat vero nam, molestias accusamus optio iure quaerat tempora quos ut quibusdam nisi sunt!
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="d-flex justify-content-start mb-4">
-                                <img src="https://a0.muscache.com/im/pictures/user/f95b6593-fa10-4516-9077-1f5e5127a1a4.jpg" className="mr-2" style={{height:"60px",width:"60px",borderRadius:"50%",objectFit:"cover"}} alt=""/>
-                                <div>
-                                    <h4>Wai Suet Gi Gi</h4>
-                                    <div>October 2020</div>
-                                    <br/>
-                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore facilis atque ex eaque maiores hic velit repellat vero nam, molestias accusamus optio iure quaerat tempora quos ut quibusdam nisi sunt!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <small><a href="">Enter a Coupon</a></small>
                     </div>
-                </div>
-                <div className="content mt-4">
-                    <a href="" className="btn btn-outline-dark">Show All 40 Reviews</a>
-                </div>
-            </div>
-            <hr/>
-            <div className="my-4">
-                <h3>Location</h3>
-                <h5 className="text-muted">Toronto, Ontario, Canada</h5>
-                <div className="w-100 position-relative clearfix" style={{height:"100vh"}}>
-                    <Map></Map>
-                </div>
-            </div>
-            <hr/>
-            <div className="my-4">
-                
-                <div className="w-100 position-relative clearfix">
-                <div className="d-flex justify-content-start mb-4">
-                    <img src="https://a0.muscache.com/im/pictures/user/f95b6593-fa10-4516-9077-1f5e5127a1a4.jpg" className="mr-2" style={{height:"100px",width:"100px",borderRadius:"50%",objectFit:"cover"}} alt=""/>
-                    <div>
-                        <h4>Hosted by Wai Suet Gi Gi</h4>
-                        <div>Joined on October 2020</div>
-                        <div><span><FontAwesomeIcon icon={faStar} className="text-theme"></FontAwesomeIcon>&nbsp;</span>&nbsp;4.77 <span className="text-muted">(40 Reviews)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span><FontAwesomeIcon icon={faShieldAlt} className="text-theme"></FontAwesomeIcon></span>&nbsp;Profile Verified</div>
+                    <hr className="my-5"/>
+                    <div className="my-4">
+                        <h3>Required for your trip</h3>
+                        <div><b>Your Message for the Host</b></div>
+                        <small>Lorem Ipsum dolor set amet</small>
                         <br/>
-                        <div>
-                            <p className="lead">
-                            Languages: 中文 (简体), English
-                            </p>
-                            <p className="lead">
-                            Response rate: 100%
-                            </p>
-                            <p className="lead">
-                            Response time: within an hour
-                            </p>
+                        <br/>
+                        <textarea name="" className="form-control" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <hr className="my-5"/>
+                    <div className="my-4">
+                        <div className="border-left border-warning p-3" style={{borderLeft:"solid 10px #ffc107!important"}}>
+                            <h4>Cancelation Policy</h4>
+                            <div>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem officia delectus aliquam. Necessitatibus ad illum mollitia, et quidem reiciendis minus adipisci earum debitis voluptatem veritatis facere fugit repellat nisi nulla!
+                                <br/><br/>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ad doloremque, corporis vero repellendus hic suscipit minima eaque aliquam illo illum expedita dicta, architecto cupiditate accusamus provident quidem est. Ipsum.
+                            </div>
                         </div>
-                        <div className="mt-4">
-                            <a href="" className="btn btn-outline-dark">Contact Host</a>
+                        <div className="my-5">
+                            <FontAwesomeIcon icon={faClock} size="2x" className="m-3 float-left"></FontAwesomeIcon>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, tempora. Iste, velit. Iure odio similique ipsa optio illo tempora. <br/><small>You wont be charged until then</small>
+                        </div>
+                        <small className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque earum tempora at saepe, ea quod et? Qui suscipit ullam, recusandae, fugit quos magni asperiores cupiditate sit blanditiis illo cumque eius.</small>
+                        <div className="my-5">
+                            <a href="" className="btn btn-theme btn-lg">
+                                <FontAwesomeIcon icon={faLock} className="mr-3"></FontAwesomeIcon>Request to Book
+                            </a>
                         </div>
                     </div>
+                </div>
+                <div className="col-md-6">
+                    <div className="mt-2 mb-4 mx-3 sticky-top" style={{top:'6em'}}>
+                        <div className="border rounded shadow p-3">
+                            <div className=" d-flex flex-row align-items-start justify-content-start mb-4 flex-md-nowrap flex-wrap">
+                                <img src="https://pix10.agoda.net/hotelImages/1269933/-1/e426483a11b42f1773217818c8854c08.jpg" style={{width:"150px"}} className="rounded mr-2" alt=""/>
+                                <div className="w-100 mb4">
+                                    <div className="d-flex flex-row justify-content-between w-100">
+                                        <div><small>Private room in trinity bellwoods</small></div>
+                                    </div>
+                                    <div><b>2 Guests - 1 bedroom - 1 bed - 1 bath</b></div>
+                                    <div className="d-flex justify-content-between flex-row align-items-baseline">
+                                        <div className="h-100 align-self-baseline"><br/><FontAwesomeIcon icon={faStar} className="text-theme"></FontAwesomeIcon> <b>4.9 </b>(46)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div>
+                                <div className="d-flex justify-content-between mb-2">
+                                    <div><a href="">Lorem Ipsum</a></div>
+                                    <div>$78</div>
+                                </div>
+                                <div className="d-flex justify-content-between mb-2">
+                                    <div><a href="">Lorem Ipsum</a></div>
+                                    <div>$78</div>
+                                </div>
+                                <div className="d-flex justify-content-between mb-2">
+                                    <div><a href="">Lorem Ipsum</a></div>
+                                    <div>$78</div>
+                                </div>
+                                <div className="d-flex justify-content-between mb-2">
+                                    <div><a href="">Lorem Ipsum</a></div>
+                                    <div>$78</div>
+                                </div>
+                                <div className="d-flex justify-content-between mb-2">
+                                    <div><b>Total</b></div>
+                                    <div><b>${78*4}</b></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <hr/>
-            <div className="my-4 otherplaces">
-            <Carousel
-                swipeable={false}
-                draggable={false}
-                showDots={true}
-                responsive={responsive}
-                ssr={false} // means to render carousel on server-side.
-                infinite={true}
-                autoPlay={false}
-                autoPlaySpeed={1000}
-                keyBoardControl={true}
-                customTransition="all .5"
-                transitionDuration={500}
-                containerClass="carousel-container"
-                removeArrowOnDeviceType={["tablet", "mobile"]}
-                dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px"
-                >
-                <div className="m-3">
-                    <img src="https://a0.muscache.com/im/pictures/user/f95b6593-fa10-4516-9077-1f5e5127a1a4.jpg" className="w-100 shadow rounded" />
-                    <div className="mt-4"><span><FontAwesomeIcon icon={faStar} className="text-theme"></FontAwesomeIcon>&nbsp;</span>&nbsp;4.77 <span className="text-muted">(40 Reviews)</span></div>
-                    <div>
-                        Hotek Room &bull; 1 Bedroom
-                    </div>
-                    <div>
-                        Studio Room at Botique Hotel in ...
-                    </div>
-                    <div>
-                        <b>$6912</b> / night
-                    </div>
-                </div>
-                <div className="m-3">
-                    <img src="https://a0.muscache.com/im/pictures/user/f95b6593-fa10-4516-9077-1f5e5127a1a4.jpg" className="w-100 shadow rounded" />
-                    <div className="mt-4"><span><FontAwesomeIcon icon={faStar} className="text-theme"></FontAwesomeIcon>&nbsp;</span>&nbsp;4.77 <span className="text-muted">(40 Reviews)</span></div>
-                    <div>
-                        Hotek Room &bull; 1 Bedroom
-                    </div>
-                    <div>
-                        Studio Room at Botique Hotel in ...
-                    </div>
-                    <div>
-                        <b>$6912</b> / night
-                    </div>
-                </div>
-                <div className="m-3">
-                    <img src="https://a0.muscache.com/im/pictures/d1a8e46c-00bb-4c02-b10b-c0a46e11a180.jpg" className="w-100 shadow rounded" />
-                    <div className="mt-4"><span><FontAwesomeIcon icon={faStar} className="text-theme"></FontAwesomeIcon>&nbsp;</span>&nbsp;4.77 <span className="text-muted">(40 Reviews)</span></div>
-                    <div>
-                        Hotek Room &bull; 1 Bedroom
-                    </div>
-                    <div>
-                        Studio Room at Botique Hotel in ...
-                    </div>
-                    <div>
-                        <b>$6912</b> / night
-                    </div>
-                </div>
-                <div className="m-3">
-                    <img src="https://a0.muscache.com/im/pictures/fd00d8c4-ebc1-4680-9623-f3cdd5f6310b.jpg" className="w-100 shadow rounded" />
-                    <div className="mt-4"><span><FontAwesomeIcon icon={faStar} className="text-theme"></FontAwesomeIcon>&nbsp;</span>&nbsp;4.77 <span className="text-muted">(40 Reviews)</span></div>
-                    <div>
-                        Hotek Room &bull; 1 Bedroom
-                    </div>
-                    <div>
-                        Studio Room at Botique Hotel in ...
-                    </div>
-                    <div>
-                        <b>$6912</b> / night
-                    </div>
-                </div>
-                
-                </Carousel>
-            </div>
-        </div>
-        <div className="bg-light w-100">
-            <div className="container otherexp">
-            <hr/>
-            <div className="mt-4 pb-4">
-            <Carousel
-                swipeable={false}
-                draggable={false}
-                showDots={true}
-                responsive={responsive}
-                ssr={false} // means to render carousel on server-side.
-                infinite={true}
-                autoPlay={false}
-                autoPlaySpeed={1000}
-                keyBoardControl={true}
-                customTransition="all .5"
-                transitionDuration={500}
-                containerClass="carousel-container"
-                removeArrowOnDeviceType={["tablet", "mobile"]}
-                dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px"
-                >
-                <div className="m-3">
-                    <img src="https://a0.muscache.com/im/pictures/user/f95b6593-fa10-4516-9077-1f5e5127a1a4.jpg" className="w-100 shadow rounded" />
-                    <div className="mt-4"><span><FontAwesomeIcon icon={faStar} className="text-theme"></FontAwesomeIcon>&nbsp;</span>&nbsp;4.77 <span className="text-muted">(40 Reviews)</span></div>
-                    <div>
-                        Hotek Room &bull; 1 Bedroom
-                    </div>
-                    <div>
-                        Studio Room at Botique Hotel in ...
-                    </div>
-                    <div>
-                        <b>$6912</b> / night
-                    </div>
-                </div>
-                
-                <div className="m-3">
-                    <img src="https://a0.muscache.com/im/pictures/d1a8e46c-00bb-4c02-b10b-c0a46e11a180.jpg" className="w-100 shadow rounded" />
-                    <div className="mt-4"><span><FontAwesomeIcon icon={faStar} className="text-theme"></FontAwesomeIcon>&nbsp;</span>&nbsp;4.77 <span className="text-muted">(40 Reviews)</span></div>
-                    <div>
-                        Hotek Room &bull; 1 Bedroom
-                    </div>
-                    <div>
-                        Studio Room at Botique Hotel in ...
-                    </div>
-                    <div>
-                        <b>$6912</b> / night
-                    </div>
-                </div>
-                <div className="m-3">
-                    <img src="https://a0.muscache.com/im/pictures/fd00d8c4-ebc1-4680-9623-f3cdd5f6310b.jpg" className="w-100 shadow rounded" />
-                    <div className="mt-4"><span><FontAwesomeIcon icon={faStar} className="text-theme"></FontAwesomeIcon>&nbsp;</span>&nbsp;4.77 <span className="text-muted">(40 Reviews)</span></div>
-                    <div>
-                        Hotek Room &bull; 1 Bedroom
-                    </div>
-                    <div>
-                        Studio Room at Botique Hotel in ...
-                    </div>
-                    <div>
-                        <b>$6912</b> / night
-                    </div>
-                </div>
-                
-                </Carousel>
-            </div>
             </div>
         </div>
     </Layout>
