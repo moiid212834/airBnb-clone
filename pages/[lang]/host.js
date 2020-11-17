@@ -11,7 +11,7 @@ const hosts = ()=> {
 
   return (
     <Layout>
-    <div className="w-100" style={{backgroundImage:"url('https://www.homelight.com/blog/wp-content/uploads/2019/06/front-yard-curb-appeal-.png')",height:"400px",backgroundSize:"cover",backgroundPosition:"center center"}}>
+    <div className="w-100" style={{backgroundImage:"url('https://www.homelight.com/blog/wp-content/uploads/2019/06/front-yard-curb-appeal-.png')",height:"620px",backgroundSize:"cover",backgroundPosition:"center center"}}>
         <div className="navpadding"></div>
         <div className="row h-100 align-items-baseline">
             <div className="col-md-8 offset-md-3 position-relative">
