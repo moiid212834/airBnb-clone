@@ -6,6 +6,8 @@ import { DatePicker, Menu, Dropdown, Button, InputNumber, Progress } from 'antd'
 import Map from '../../components/maps'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import moment from 'moment';
+
 const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -226,11 +228,11 @@ const booking = ()=> {
                                     <div className="d-flex justify-content-arround ">
                                         <div className="p-3 w-50">
                                             <small><b>Checkin</b></small><br/>
-                                            12/1/2020
+                                            <DatePicker defaultValue={moment('2015/01/01')}/>
                                         </div>
                                         <div className="border-left border-dark p-3 w-50">
                                             <small><b>Checkout</b></small><br/>
-                                            13/1/2020
+                                            <DatePicker defaultValue={moment('2015/01/01')}/>
                                         </div>
                                     </div>
                                 </div>

@@ -226,3 +226,7 @@ nav ul li a:hover {
       z-index: 9999999999;
       position: fixed;
   }
+
+.ant-col-16, .ant-picker{
+      max-width: 100%!important;
+}

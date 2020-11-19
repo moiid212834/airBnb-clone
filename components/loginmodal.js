@@ -2,11 +2,32 @@ import React, { useState } from 'react';
 import { Button, Modal, Form, Input, Radio } from 'antd';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
-import { faEnvelope, faAppleAlt } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import StandardForm from './form'
+import PinForm from './pinform'
+import { Steps, message } from 'antd';
+
+const { Step } = Steps;
+const steps = [
+  {
+    title: 'First',
+    content: <StandardForm></StandardForm>,
+  },
+  {
+    title: 'Second',
+    content: <PinForm></PinForm>,
+  },
+];
 
 const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
+  const [current, setCurrent] = React.useState(0);
+
+  const next = () => {
+    setCurrent(current + 1);
+  };
+
+  const prev = () => {
+    setCurrent(current - 1);
+  };
   const  [phone,setPhone]=useState();
   const [form] = Form.useForm();
   return (
@@ -28,42 +49,27 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           });
       }}
     >
-      <Form
-        form={form}
-        layout="vertical"
-        name="form_in_modal"
-        initialValues={{
-          modifier: 'public',
-        }}
-      >
-        <Form.Item
-          name="phone"
-          label="Phone"
-          rules={[
-            {
-              required: true,
-              message: 'Please enter valid phone number',
-            },
-          ]}
-          className="my-0 w-100"
-          
-        >
-            <PhoneInput
-            country={'us'}
-            clasName="w-100"
-            style={{width:"100%"}}
-            />
-            <small><b>We'll call or text to confirm that its you, standard rates and taxes will apply</b></small> 
-        </Form.Item>
-        <a href="" className="btn btn-theme btn-lg- btn-block mt-3">Continue</a>
-        <hr/>
-        <div className="btn btn-sm btn-block btn-outline-dark"><FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon> Continue with Email</div>
-        <div className="btn btn-sm btn-block btn-outline-dark"><FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon> Continue with Facebook</div>
-        <div className="btn btn-sm btn-block btn-outline-dark">Continue with Google</div>
-        <div className="btn btn-sm btn-block btn-outline-dark"><FontAwesomeIcon icon={faAppleAlt} ></FontAwesomeIcon> Continue with Apple</div>
-        <br/>
-        <div>New to clone? <a href="#" className="text-theme">Register Now</a></div>
-      </Form>
+      
+      <div className="steps-content">{steps[current].content}</div>
+      <div className="steps-action">
+        {current < steps.length - 1 && (
+          <Button type="primary" id="loginnext"  className="d-none next" onClick={() => next()}>
+            Next
+          </Button>
+        )}
+       
+        {current > 0 && (
+          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
+            Previous
+          </Button>
+        )}
+         {current === steps.length - 1 && (
+          <Button className="btn btn-theme px-5 mb-1" onClick={() => message.success('Processing complete!')}>
+            Done
+          </Button>
+        )}
+      </div>
+      
     </Modal>
   );
 };
