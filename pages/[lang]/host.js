@@ -49,7 +49,7 @@ const hosts = ()=> {
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             </div>
                             <div>   
-                            <a href="begin-hosting" className="btn btn-block btn-lg btn-theme">Begin Hosting</a>
+                            <a href="/en/begin-hosting" className="btn btn-block btn-lg btn-theme">Begin Hosting</a>
                             </div>
                         </div>
                     </div>     
