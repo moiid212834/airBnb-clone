@@ -64,7 +64,11 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           </Button>
         )}
          {current === steps.length - 1 && (
-          <Button className="btn btn-theme px-5 mb-1" onClick={() => message.success('Processing complete!')}>
+          <Button className="btn btn-theme px-5 mb-1" 
+          onClick={() => {
+          message.success('Processing complete!');
+          location.href="en/trips";
+          }}>
             Done
           </Button>
         )}
