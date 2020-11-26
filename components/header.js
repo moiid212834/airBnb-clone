@@ -31,7 +31,7 @@ const menulang = (
       </Menu.Item>
       <hr/>
       <Menu.Item>
-        <a href="host" rel="noopener noreferrer" >
+        <a href="/en/host" rel="noopener noreferrer" >
           Host a Home
         </a>
       </Menu.Item>
